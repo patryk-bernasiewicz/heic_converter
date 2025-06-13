@@ -62,9 +62,24 @@ if __name__ == "__main__":
     formatter_class = argparse.ArgumentDefaultsHelpFormatter
   )
 
-  parser.add_argument("input_dir", help="Path to the directory with HEIC images. Default = . (current directory)")
-  parser.add_argument("output_dir", help="Path to the directory to save the converted images. Default = . (current directory)")
-  parser.add_argument("-f", "--format", choices=["JPG", "PNG"], default="JPG", help="Output format (JPG or PNG, default = JPG)")
+  parser.add_argument(
+    "input_dir",
+    help = "Path to the directory with HEIC images. Default = . (current directory)",
+    nargs = "?",
+    default = "."
+  )
+  parser.add_argument(
+    "output_dir",
+    help = "Path to the directory to save the converted images. Default = . (current directory)",
+    nargs = "?",
+    default = "."
+  )
+  parser.add_argument(
+    "-f", "--format",
+    choices=["JPG", "PNG"],
+    default="JPG",
+    help="Output format (JPG or PNG, default = JPG)"
+  )
 
   args = parser.parse_args()
 
